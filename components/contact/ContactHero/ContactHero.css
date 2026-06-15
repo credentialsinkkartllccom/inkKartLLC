@@ -1,0 +1,51 @@
+.contact-hero {
+    background: var(--primary);
+    padding: 120px 20px 100px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+    opacity: 0.1;
+}
+
+.contact-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-hero h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.contact-hero p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 2;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

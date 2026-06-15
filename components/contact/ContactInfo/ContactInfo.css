@@ -1,0 +1,124 @@
+.contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.info-card {
+    background: var(--bg);
+    padding: 60px 48px;
+    border-radius: 0px;
+    border: 1px solid var(--primary);
+    margin-bottom: -1px;
+}
+
+.info-card h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--accent);
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.info-item {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.info-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.info-content h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.info-content p {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.help-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.help-list li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.help-list li::before {
+    content: '';
+    width: 12px;
+    height: 1px;
+    background: var(--accent);
+}
+
+.response-status {
+    background: var(--primary);
+    border: none;
+    padding: 32px;
+    border-radius: 0px;
+    margin-top: 24px;
+}
+
+.response-status h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.response-status p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .info-card {
+        padding: 40px 24px;
+    }
+}

@@ -1,0 +1,241 @@
+/* AboutUs.css - Standardized with Home page aesthetics */
+
+.about-page {
+    background: var(--bg);
+    min-height: 100vh;
+}
+
+.about-hero-elite {
+    padding: 120px 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+    color: var(--primary);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+.about-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.about-hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(0, 150, 214, 0.15);
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.about-hero-text h1 {
+    font-family: 'DM Sans';
+    font-size: 56px;
+    line-height: 1.1;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.about-hero-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 2.4;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+/* Secondary Section Pattern (Similar to HomeAbout) */
+.about-section {
+    padding: 100px 30px;
+    background: var(--bg);
+}
+
+.about-section-alt {
+    padding: 100px 30px;
+    background: #fcfcfc;
+}
+
+.section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-grid-standard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: center;
+}
+
+.text-side h2 {
+    font-family: 'DM Sans';
+    font-size: 42px;
+    font-weight: 950;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 40px;
+}
+
+.text-side p {
+    font-size: 15px;
+    line-height: 2.2;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* Cards Section (Similar to HomeWhyChoose) */
+.about-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 80px;
+}
+
+.about-card {
+    background: var(--bg);
+    padding: 60px;
+    border: 1px solid var(--border);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 30px 60px rgba(0, 150, 214, 0.08);
+}
+
+.about-card h3 {
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.about-card p {
+    font-size: 14px;
+    line-height: 2;
+    color: var(--text-muted);
+}
+
+/* Responsive Overrides matching Home */
+@media (max-width: 1280px) {
+    .about-hero-text h1 { font-size: 48px; }
+    .about-grid-standard { gap: 60px; }
+    .text-side h2 { font-size: 36px; }
+}
+
+@media (max-width: 1024px) {
+    .about-hero-grid, 
+    .about-grid-standard {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        text-align: center;
+    }
+    .about-hero-text, .text-side {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .about-hero-desc { margin: 0 auto 40px; }
+}
+
+/* Final CTA Section */
+.about-cta-section {
+    padding: 100px 30px 140px;
+    background: var(--bg);
+}
+
+.about-cta-card {
+    background: var(--primary);
+    padding: 100px 40px;
+    text-align: center;
+    border-bottom: 8px solid var(--accent);
+    position: relative;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+}
+
+.cta-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(0, 150, 214, 0.1);
+    color: var(--accent);
+    font-family: 'DM Sans';
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.cta-title {
+    font-family: 'DM Sans';
+    font-size: 48px;
+    font-weight: 950;
+    line-height: 1.1;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+}
+
+.cta-desc {
+    font-family: 'Inter';
+    font-size: 15px;
+    line-height: 2.2;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 50px;
+    letter-spacing: 0.5px;
+}
+
+.cta-btn-primary {
+    display: inline-block;
+    background: var(--bg);
+    color: var(--primary);
+    padding: 24px 60px;
+    font-family: 'DM Sans';
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-btn-primary:hover {
+    background: var(--accent);
+    color: #ffffff;
+    transform: translateY(-8px);
+}
+
+@media (max-width: 768px) {
+    .about-cta-card { padding: 80px 20px; }
+    .cta-title { font-size: 32px; letter-spacing: -1px; }
+    .cta-desc { font-size: 14px; line-height: 2; margin-bottom: 40px; }
+    .cta-btn-primary { padding: 20px 40px; font-size: 10px; width: 100%; text-align: center; }
+}

@@ -1,0 +1,153 @@
+.home-peace-expansive {
+    padding: 100px 40px;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.peace-grid-elite {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 120px;
+    align-items: center;
+}
+
+.peace-badge {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #111;
+    color: #fff;
+    font-family: 'DM Sans';
+    font-weight: 900;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+}
+
+.massive-title-black {
+    font-family: 'DM Sans';
+    font-weight: 950;
+    font-size: 48px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 40px;
+    color: var(--primary);
+}
+
+
+.peace-body-text p {
+    font-family: 'Inter';
+    font-size: 16px;
+    line-height: 2.4;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* Actions */
+.peace-actions-elite {
+    display: flex;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.elite-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 50px;
+    font-family: 'DM Sans';
+    font-weight: 900;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-decoration: none;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.elite-btn.black {
+    background: #111;
+    color: #fff;
+}
+
+.elite-btn.black:hover {
+    background: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 150, 214, 0.3);
+}
+
+.elite-btn.outline-gold {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--primary);
+}
+
+.elite-btn.outline-gold:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 150, 214, 0.3);
+}
+
+/* Visual Side */
+.peace-visual-side {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.peace-icon-box {
+    width: 350px;
+    height: 350px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background: #fbfbfb;
+    position: relative;
+    transition: all 0.6s;
+}
+
+.peace-icon-box:hover {
+    border-color: var(--accent);
+    background: var(--bg);
+    transform: rotate(2deg) scale(1.05);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.05);
+}
+
+.safety-label {
+    font-family: 'DM Sans';
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--accent);
+}
+
+@media (max-width: 1200px) {
+    .peace-grid-elite { gap: 60px; }
+    .massive-title-black { font-size: 52px; }
+    .peace-icon-box { width: 280px; height: 280px; }
+}
+
+@media (max-width: 1024px) {
+    .peace-grid-elite {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        text-align: center;
+    }
+    .peace-body-text p { margin-left: auto; margin-right: auto; }
+    .peace-actions-elite { justify-content: center; flex-direction: column; }
+    .peace-visual-side { order: -1; }
+}
+
+@media (max-width: 768px) {
+    .home-peace-expansive { padding: 80px 20px; }
+    .massive-title-black { font-size: 34px; }
+}

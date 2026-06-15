@@ -1,0 +1,40 @@
+{
+  "name": "inkkartllc-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
+    "axios": "^1.6.7",
+    "bcryptjs": "^3.0.3",
+    "chart.js": "^4.5.1",
+    "cloudinary": "^2.10.0",
+    "framer-motion": "^11.0.3",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^0.563.0",
+    "mongoose": "^9.6.3",
+    "next": "15.1.6",
+    "nodemailer": "^8.0.10",
+    "react": "^19.0.0",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-quill-new": "^3.8.3",
+    "react-redux": "^9.2.0",
+    "recharts": "^3.8.1",
+    "tailwindcss-animate": "^1.0.7",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "eslint": "^8",
+    "eslint-config-next": "15.1.6",
+    "postcss": "^8",
+    "tailwindcss": "^4.0.0"
+  }
+}

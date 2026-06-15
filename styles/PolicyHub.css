@@ -1,0 +1,189 @@
+/* PolicyHub.css - Realigned with Elite Black & Gold design system */
+
+.policy-hub-wrapper {
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.policy-hub-main {
+    padding-bottom: 100px;
+}
+
+/* Hero Section - matching AboutUs/Contact/TrackHero */
+.policy-hub-hero {
+    padding: 100px 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+    color: #111;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.policy-hub-hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 5;
+    position: relative;
+    text-align: center;
+}
+
+.policy-hub-title {
+    font-family: 'Outfit';
+    font-size: 56px;
+    line-height: 1.1;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.policy-hub-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 2.4;
+    color: #4A6FA5;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    letter-spacing: 0.5px;
+}
+
+.policy-hub-divider {
+    width: 80px;
+    height: 3px;
+    background: #0096D6;
+    margin: 0 auto;
+}
+
+/* Container */
+.policy-hub-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Policy Cards Grid - Boutique Grid Pattern */
+.policy-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+/* Individual Policy Card */
+.policy-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    padding: 50px 40px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.policy-card:hover {
+    transform: translateY(-10px);
+    border-color: #0096D6;
+    box-shadow: 0 40px 80px rgba(0, 150, 214, 0.1);
+}
+
+.policy-card-gradient { display: none; } /* Removing old gradient */
+
+.policy-card-icon {
+    width: 60px;
+    height: 60px;
+    background: #111;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    transition: all 0.4s;
+}
+
+.policy-card:hover .policy-card-icon {
+    background: #0096D6;
+}
+
+.policy-card-icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+.policy-card-title {
+    font-family: 'Outfit';
+    font-size: 14px;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #111;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.policy-card-description {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #4A6FA5;
+    margin-bottom: 25px;
+}
+
+.policy-card-arrow {
+    margin-top: auto;
+    color: #0096D6;
+}
+
+/* Footer info boxes matching others */
+.policy-hub-footer-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 80px;
+}
+
+.policy-info-box {
+    text-align: left;
+}
+
+.policy-info-box h3 {
+    font-family: 'Outfit';
+    font-size: 10px;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #0096D6;
+    margin-bottom: 15px;
+}
+
+.policy-info-box p {
+    font-size: 14px;
+    color: #111;
+    font-weight: 700;
+}
+
+.policy-info-box a {
+    color: #111;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+    .policy-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 1024px) {
+    .policy-hub-title { font-size: 42px; }
+}
+
+@media (max-width: 768px) {
+    .policy-cards-grid { grid-template-columns: 1fr; }
+    .policy-hub-hero { padding: 80px 20px; }
+    .policy-hub-title { font-size: 32px; }
+    .policy-hub-footer-info { grid-template-columns: 1fr; }
+}

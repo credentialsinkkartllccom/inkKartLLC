@@ -1,0 +1,34 @@
+.faq-hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: var(--primary);
+    color: #fff;
+    margin-bottom: 60px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.faq-hero .page-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 24px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.faq-intro {
+    font-size: 14px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 800px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

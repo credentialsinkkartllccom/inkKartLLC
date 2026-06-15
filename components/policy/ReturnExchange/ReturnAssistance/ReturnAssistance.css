@@ -1,0 +1,93 @@
+.return-assistance {
+    margin-bottom: 60px;
+}
+
+.assistance-card {
+    background: #111;
+    padding: 60px;
+    text-align: center;
+    color: white;
+    border-top: 5px solid var(--accent);
+}
+
+.assistance-card h2 {
+    font-family: 'DM Sans';
+    font-size: 32px;
+    font-weight: 950;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.assistance-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.assistance-item {
+    background: #1a1a1a;
+    padding: 30px;
+    border: 1px solid rgba(0,150,214,0.3);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s ease;
+    min-width: 320px;
+    cursor: pointer;
+}
+
+.assistance-item:hover {
+    border-color: var(--accent);
+    background: rgba(0,32,96,0.5);
+    transform: translateY(-5px);
+}
+
+.assistance-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+}
+
+.assistance-text {
+    text-align: left;
+}
+
+.assistance-text h3 {
+    font-family: 'DM Sans';
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 5px;
+}
+
+.assistance-text p {
+    font-family: 'DM Sans';
+    font-size: 14px;
+    font-weight: 950;
+    color: #fff;
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    .assistance-card {
+        padding: 40px 20px;
+    }
+
+    .assistance-item {
+        min-width: 100%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,117 @@
+.home-why-choose {
+    padding: 80px 20px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+}
+
+.home-commitment-dark {
+    padding: 100px 40px;
+    background: #000000;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.why-choose-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.home-why-choose .section-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.why-card {
+    background: var(--bg);
+    padding: 60px;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid var(--border);
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 30px 60px rgba(0, 150, 214, 0.1);
+}
+
+.why-icon-container {
+    width: 64px;
+    height: 64px;
+    background: transparent;
+    color: var(--accent);
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid var(--accent);
+    transition: all 0.4s ease;
+}
+
+.why-card:hover .why-icon-container {
+    background: var(--accent);
+    color: #fff;
+}
+
+.why-content h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 20px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.why-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .home-why-choose {
+        padding: 80px 20px;
+    }
+
+    .why-card {
+        padding: 40px;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .why-icon-container {
+        margin: 0;
+    }
+
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-why-choose .section-title {
+        font-size: 32px;
+    }
+}

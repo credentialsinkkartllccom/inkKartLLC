@@ -1,0 +1,130 @@
+.home-about-elite {
+    padding: 120px 0;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.home-about-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* Visual Side */
+.about-visual-side {
+    position: relative;
+}
+
+.visual-wrapper {
+    position: relative;
+}
+
+.main-visual {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    z-index: 2;
+    position: relative;
+}
+
+.gold-accent-frame {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 70%;
+    height: 70%;
+    background: var(--surface);
+    z-index: 0;
+    border: 1px solid var(--border);
+}
+
+.badge-overlay {
+    position: absolute;
+    bottom: 40px;
+    right: -20px;
+    background: var(--primary);
+    color: #fff;
+    padding: 30px 40px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-overlay .since { 
+    font-size: 12px; 
+    opacity: 0.8; 
+    margin-bottom: 5px; 
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.badge-overlay .type { 
+    font-size: 18px; 
+    font-weight: 800;
+    font-family: var(--font-heading);
+}
+
+/* Content Side */
+.about-content-side {
+    max-width: 600px;
+}
+
+.text-blocks p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.underline-gold {
+    position: relative;
+    display: inline-block;
+}
+
+.underline-gold::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: var(--accent);
+    opacity: 0.2;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+@media (max-width: 1024px) {
+    .home-about-grid {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        text-align: center;
+        padding: 0 20px;
+    }
+    .about-visual-side { order: 2; }
+    .about-content-side { 
+        order: 1; 
+        margin: 0 auto; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .gold-accent-frame { display: none; }
+    .main-visual { height: 450px; }
+    .badge-overlay { 
+        right: 50%; 
+        transform: translateX(50%); 
+        bottom: -30px; 
+    }
+}
+
+@media (max-width: 640px) {
+    .home-about-elite { padding: 80px 0; }
+    .main-visual { height: 350px; }
+    .home-about-grid { padding: 0 1.5rem; }
+}

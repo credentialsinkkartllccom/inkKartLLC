@@ -1,0 +1,24 @@
+.contact-page-wrapper {
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.contact-main-content {
+    max-width: 1200px;
+    margin: 80px auto 120px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 1024px) {
+    .contact-main-content {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+        padding: 0 24px;
+        gap: 60px;
+    }
+}

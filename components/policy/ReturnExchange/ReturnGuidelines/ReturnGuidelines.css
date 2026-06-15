@@ -1,0 +1,116 @@
+.return-guidelines {
+    padding-bottom: 60px;
+}
+
+.guidelines-container h2 {
+    font-family: 'DM Sans';
+    font-size: 32px;
+    font-weight: 950;
+    color: var(--primary);
+    margin-bottom: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.guidelines-card {
+    background: var(--bg);
+    padding: 40px;
+    border: 1px solid var(--border);
+    transition: all 0.4s ease;
+}
+
+.guidelines-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+}
+
+.guidelines-card.full-width {
+    grid-column: span 2;
+}
+
+.guidelines-card h3 {
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-weight: 950;
+    color: var(--primary);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.guidelines-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.guidelines-list li {
+    padding-left: 35px;
+    position: relative;
+    margin-bottom: 20px;
+    font-family: 'DM Sans';
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--text-muted);
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.guidelines-list.eligible li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 950;
+}
+
+.guidelines-list.non-returnable li::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    color: #8b0000;
+    font-weight: 950;
+}
+
+.packaging-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #fbfbfb;
+    padding: 30px;
+    border: 1px solid var(--border);
+}
+
+.packaging-info svg {
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.packaging-info p {
+    font-family: 'DM Sans';
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guidelines-card.full-width {
+        grid-column: span 1;
+    }
+}

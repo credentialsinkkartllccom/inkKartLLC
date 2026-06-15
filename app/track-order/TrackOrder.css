@@ -1,0 +1,280 @@
+/* TrackOrder.css - Standardized with Elite design system */
+
+.track-order-page {
+    background: var(--bg);
+    min-height: 100vh;
+}
+
+.track-hero-elite {
+    padding: 100px 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+    color: var(--primary);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.track-hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 5;
+    position: relative;
+    text-align: center;
+}
+
+.track-hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(0, 150, 214, 0.15);
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.track-hero-elite h1 {
+    font-family: 'DM Sans';
+    font-size: 56px;
+    line-height: 1.1;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.track-hero-elite p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 2.4;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: 0.5px;
+}
+
+/* Tracking Content */
+.track-section {
+    padding: 80px 30px;
+    background: var(--bg);
+}
+
+.track-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.search-box-elite {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    margin-bottom: 60px;
+}
+
+.search-input-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    padding: 20px 20px 20px 60px;
+    background: #fcfcfc;
+    border: 1px solid var(--border);
+    outline: none;
+    font-family: 'Inter';
+    font-size: 16px;
+}
+
+.search-icon-fixed {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+}
+
+.track-submit-btn {
+    padding: 20px 60px;
+    background: #111;
+    color: #fff;
+    font-family: 'DM Sans';
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.track-submit-btn:hover { background: var(--accent); }
+
+/* Result Card */
+.order-result-card {
+    border: 1px solid var(--border);
+    background: var(--bg);
+}
+
+.order-card-header {
+    padding: 30px 40px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+}
+
+.order-card-header h2 {
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.order-id-display {
+    font-family: 'DM Sans';
+    font-size: 20px;
+    font-weight: 950;
+    color: var(--primary);
+}
+
+.status-indicator {
+    padding: 8px 20px;
+    background: #111;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Timeline */
+.tracking-timeline {
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    position: relative;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 5;
+}
+
+.step-icon-box {
+    width: 50px;
+    height: 50px;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    color: var(--border);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.timeline-step.completed .step-icon-box {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 0 8px rgba(0, 150, 214, 0.1);
+}
+
+.step-label {
+    text-transform: uppercase;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.8);
+    transition: color 0.5s ease;
+}
+
+.timeline-step.completed .step-label { color: var(--primary); }
+
+/* Details Boxes */
+.order-details-grid {
+    padding: 40px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.detail-block h4 {
+    font-family: 'DM Sans';
+    font-size: 11px;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: var(--accent);
+}
+
+.detail-block.full-width {
+    grid-column: span 2;
+}
+
+.telemetry-ping {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 0 rgba(0, 150, 214, 0.4);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 150, 214, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 150, 214, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 150, 214, 0); }
+}
+
+.telemetry-info {
+    position: relative;
+}
+
+.telemetry-coordinates {
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.detail-total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    font-weight: 900;
+    font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+    .track-hero-elite h1 { font-size: 42px; }
+    .tracking-timeline { grid-template-columns: 1fr; gap: 40px; text-align: left; }
+    .step-icon-box { margin: 0; }
+    .order-details-grid { grid-template-columns: 1fr; }
+    .detail-block.full-width { grid-column: span 1; }
+}
+
+@media (max-width: 768px) {
+    .track-hero-elite { padding: 80px 20px; }
+    .track-hero-elite h1 { font-size: 32px; }
+    .search-box-elite { flex-direction: column; }
+    .track-submit-btn { width: 100%; }
+}

@@ -1,0 +1,119 @@
+.contact-section {
+    margin-top: 100px;
+    padding: 100px 40px;
+    background: #fbfbfb;
+    border-radius: 0px;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.contact-section h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0 0 60px 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0px;
+    margin-bottom: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-item {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    padding: 48px 32px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 0px;
+    transition: all 0.4s ease;
+}
+
+.contact-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    z-index: 1;
+}
+
+.contact-item svg {
+    flex-shrink: 0;
+    color: var(--accent);
+}
+
+.contact-item span {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.map-container {
+    margin-top: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 400px;
+    background: var(--primary);
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+    opacity: 0.1;
+}
+
+.map-placeholder svg {
+    color: var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.map-placeholder p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

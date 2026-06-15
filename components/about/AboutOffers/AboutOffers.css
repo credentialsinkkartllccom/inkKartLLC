@@ -1,0 +1,76 @@
+.what-we-offer {
+    padding: 100px 0;
+    animation: fadeInUp 0.8s ease-out both;
+    background: #fbfbfb;
+}
+
+.what-we-offer h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0 0 60px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.offer-card {
+    background: var(--bg);
+    padding: 60px 40px;
+    border-radius: 0px;
+    border: 1px solid var(--border);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: center;
+}
+
+.offer-card:hover {
+    transform: translateY(-8px);
+    z-index: 10;
+    border-color: var(--accent);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.offer-icon {
+    margin-bottom: 32px;
+}
+
+.offer-icon svg {
+    color: var(--accent);
+}
+
+.offer-card h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.offer-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

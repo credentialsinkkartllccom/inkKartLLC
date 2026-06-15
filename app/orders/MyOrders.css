@@ -1,0 +1,204 @@
+/* MyOrders.css - Standardized with Elite design system */
+
+.orders-page {
+    background: var(--bg);
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.orders-hero-elite {
+    padding: 100px 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+    color: var(--primary);
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 5px solid var(--accent);
+}
+
+.orders-hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 5;
+    text-align: center;
+}
+
+.orders-hero-elite h1 {
+    font-family: 'DM Sans';
+    font-size: 52px;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.orders-hero-elite p {
+    font-family: 'DM Sans';
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* Main Content */
+.orders-main-section {
+    padding: 80px 30px;
+    background: var(--bg);
+}
+
+.orders-container-elite {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Order Card */
+.order-card-elite {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    margin-bottom: 40px;
+    transition: all 0.4s;
+}
+
+.order-card-elite:hover {
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+}
+
+.order-header-elite {
+    padding: 30px 40px;
+    background: #fbfbfb;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.header-meta-group {
+    display: flex;
+    gap: 40px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.meta-label {
+    font-family: 'DM Sans';
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(0,0,0,0.4);
+}
+
+.meta-value {
+    font-family: 'DM Sans';
+    font-size: 11px;
+    font-weight: 950;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+/* Status Badge */
+.status-badge-elite {
+    padding: 8px 16px;
+    font-family: 'DM Sans';
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--border);
+}
+
+.status-badge-elite.success { background: #f0fdf4; color: #166534; border-color: rgba(22, 101, 52, 0.1); }
+.status-badge-elite.processing { background: #eff6ff; color: #1e40af; border-color: rgba(30, 64, 175, 0.1); }
+.status-badge-elite.pending { background: #fffbeb; color: #92400e; border-color: rgba(146, 64, 14, 0.1); }
+
+/* Order Body */
+.order-body-elite {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 40px;
+    align-items: center;
+}
+
+.order-items-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.preview-item-box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.preview-img {
+    width: 60px;
+    height: 60px;
+    background: #fbfbfb;
+    border: 1px solid var(--border);
+    padding: 8px;
+}
+
+.preview-details h4 {
+    font-family: 'DM Sans';
+    font-size: 11px;
+    font-weight: 950;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.preview-details p {
+    font-family: 'Inter';
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+}
+
+/* Actions */
+.order-actions-elite {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order-btn-elite {
+    width: 100%;
+    padding: 16px;
+    font-family: 'DM Sans';
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn-primary-elite { background: #111; color: #fff; border: none; }
+.btn-primary-elite:hover { background: var(--accent); }
+.btn-secondary-elite { background: var(--bg); color: var(--primary); border: 1px solid #111; }
+.btn-secondary-elite:hover { border-color: var(--accent); color: var(--accent); }
+
+@media (max-width: 1024px) {
+    .order-header-elite { padding: 30px; }
+    .order-body-elite { grid-template-columns: 1fr; gap: 30px; }
+    .order-actions-elite { flex-direction: row; }
+}
+
+@media (max-width: 768px) {
+    .orders-hero-elite h1 { font-size: 34px; }
+    .header-meta-group { flex-direction: column; gap: 20px; }
+    .order-header-elite { flex-direction: column; align-items: flex-start; }
+    .order-actions-elite { flex-direction: column; width: 100%; }
+}
