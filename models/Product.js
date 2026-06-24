@@ -25,6 +25,7 @@ const productSchema = mongoose.Schema(
     shortDetails: { type: String },
     shortSpecification: { type: String },
     overview: { type: String },
+    about: { type: String },
     technicalSpecification: { type: String },
     color: { type: String },
     width: { type: String },

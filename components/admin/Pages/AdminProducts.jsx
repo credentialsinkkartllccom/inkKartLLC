@@ -38,7 +38,7 @@ const AdminProducts = () => {
     const { categories } = categoryList;
 
     const [allProducts, setAllProducts] = useState([]);
-    
+
     // Accumulate products when redux state changes
     useEffect(() => {
         if (products) {
@@ -46,7 +46,7 @@ const AdminProducts = () => {
                 setAllProducts(products);
             } else {
                 setAllProducts(prev => {
-                    // Safety check to ensure prev is array
+                    // Ensure we work with an array
                     const safePrev = Array.isArray(prev) ? prev : [];
                     const existingIds = new Set(safePrev.map(p => p._id));
                     const newProducts = products.filter(p => !existingIds.has(p._id));
@@ -97,6 +97,7 @@ const AdminProducts = () => {
         shortDetails: '',
         shortSpecification: '',
         overview: '',
+        about: '',
         technicalSpecification: '',
         color: '',
         width: '',
@@ -185,6 +186,7 @@ const AdminProducts = () => {
 
     const handleQuillChange = (name, value) => {
         setFormData(prev => ({ ...prev, [name]: value }));
+        console.log("formdata", formData)
     };
 
     const handleFileChange = (e) => {
@@ -237,6 +239,7 @@ const AdminProducts = () => {
         setEditingId(product._id);
         const techSpec = product.technicalSpecification || '';
 
+
         let categoryName = '';
         if (product.category && typeof product.category === 'object') {
             categoryName = product.category.name || '';
@@ -262,6 +265,7 @@ const AdminProducts = () => {
             shortDetails: product.shortDetails || '',
             shortSpecification: product.shortSpecification || '',
             overview: product.overview || '',
+            about: product.about || '',
             technicalSpecification: techSpec,
             color: product.color || '',
             width: product.width || '',
@@ -272,13 +276,15 @@ const AdminProducts = () => {
             reviews: product.reviews || []
         });
 
+        // console.log(formData, "form Data")
+
         // Parse Technical Specifications if it matches table structure
         if (techSpec.includes('<table') && techSpec.includes('<tr')) {
             try {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(techSpec, 'text/html');
                 const rows = Array.from(doc.querySelectorAll('tr'));
-                
+
                 const parsedRows = rows.map((row, index) => {
                     const cells = row.querySelectorAll('td');
                     if (cells.length >= 2) {
@@ -313,6 +319,11 @@ const AdminProducts = () => {
         setPreviewImages(product.images || []);
         setSelectedFiles([]); // Clear any previously selected files
         setIsFormOpen(true);
+
+
+
+
+
     };
 
     const handleDelete = (id) => {
@@ -336,7 +347,7 @@ const AdminProducts = () => {
     };
 
     const updateSpecRow = (id, field, value) => {
-        setSpecRows(specRows.map(row => 
+        setSpecRows(specRows.map(row =>
             row.id === id ? { ...row, [field]: value } : row
         ));
     };
@@ -349,13 +360,13 @@ const AdminProducts = () => {
         // Handle Tech Specs Table Mode
         let finalTechSpecs = formData.technicalSpecification;
         if (specType === 'table') {
-            const tableRows = specRows.filter(r => r.key && r.value).map(r => 
+            const tableRows = specRows.filter(r => r.key && r.value).map(r =>
                 `<tr class="border-b border-slate-100">
                     <td class="py-3 pr-4 font-bold text-slate-900 uppercase text-xs w-1/3">${r.key}</td>
                     <td class="py-3 text-slate-600 text-sm">${r.value}</td>
                 </tr>`
             ).join('');
-            
+
             finalTechSpecs = `<table class="w-full text-left border-collapse"><tbody>${tableRows}</tbody></table>`;
         }
 
@@ -722,8 +733,17 @@ const AdminProducts = () => {
                                     <div className="quill-container bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
                                         <ReactQuill
                                             theme="snow"
-                                            value={formData.overview}
+                                            value={formData.description}
                                             onChange={(val) => handleQuillChange('overview', val)}
+                                            modules={quillModules}
+                                        />
+                                    </div>
+                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">About (Rich Text)</label>
+                                    <div className="quill-container bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
+                                        <ReactQuill
+                                            theme="snow"
+                                            value={formData.about}
+                                            onChange={(val) => handleQuillChange('about', val)}
                                             modules={quillModules}
                                         />
                                     </div>
@@ -1064,22 +1084,22 @@ const AdminProducts = () => {
                         </tbody>
                     </table>
                 </div>
-                
-                 {loading && allProducts.length > 0 && (
-                     <div className="p-4 border-t border-slate-50 flex justify-center sticky bottom-0 bg-[var(--bg)]/95 backdrop-blur-sm z-10 space-x-2">
-                             <div className="w-5 h-5 border-2 border-slate-600 border-t-transparent rounded-full animate-spin"></div>
-                             <span className="text-slate-500 font-bold text-sm">Loading more products...</span>
-                     </div>
-                 )}
+
+                {loading && allProducts.length > 0 && (
+                    <div className="p-4 border-t border-slate-50 flex justify-center sticky bottom-0 bg-[var(--bg)]/95 backdrop-blur-sm z-10 space-x-2">
+                        <div className="w-5 h-5 border-2 border-slate-600 border-t-transparent rounded-full animate-spin"></div>
+                        <span className="text-slate-500 font-bold text-sm">Loading more products...</span>
+                    </div>
+                )}
 
                 {(page < pages) && filteredProducts?.length > 0 && !loading && (
-                     <div className="p-8 flex justify-center border-t border-slate-100">
-                        <button 
+                    <div className="p-8 flex justify-center border-t border-slate-100">
+                        <button
                             onClick={handleLoadMore}
                             disabled={loading}
-                             className="px-8 py-3 bg-slate-100 text-slate-700 hover:bg-slate-200 rounded-2xl text-sm font-black uppercase tracking-widest transition-all disabled:opacity-50 flex items-center gap-3 active:scale-95 shadow-sm"
+                            className="px-8 py-3 bg-slate-100 text-slate-700 hover:bg-slate-200 rounded-2xl text-sm font-black uppercase tracking-widest transition-all disabled:opacity-50 flex items-center gap-3 active:scale-95 shadow-sm"
                         >
-                           See More Products
+                            See More Products
                         </button>
                     </div>
                 )}

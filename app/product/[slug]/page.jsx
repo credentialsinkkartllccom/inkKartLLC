@@ -210,37 +210,14 @@ const handleReviewClick = () => {
     setZoomPos({ x, y });
   };
 
-  const getOverviewParagraphs = () => {
-    if (!product) return [];
-    const raw = product.overview || product.description || '';
-    if (!raw) return null;
-    
-    // Decode HTML entities, strip tags, split into readable paragraphs
-    const decoded = raw
-      .replace(/&nbsp;/g, ' ')
-      .replace(/&amp;/g, '&')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
-      .replace(/<br\s*\/?>/gi, '\n')
-      .replace(/<\/p>/gi, '\n\n')
-      .replace(/<\/li>/gi, '\n')
-      .replace(/<li[^>]*>/gi, '• ')
-      .replace(/<[^>]+>/g, '')
-      .replace(/[ \t]+/g, ' ')
-      .trim();
-
-    // Split on double newlines or sentence-ending pattern followed by a capital letter (new section)
-    const paragraphs = decoded
-      .split(/\n\n+/)
-      .flatMap(block => block.split(/(?<=[.!?])\s+(?=[A-Z])/))
-      .map(p => p.trim())
-      .filter(p => p.length > 0);
-
-    return paragraphs;
+  const getOverviewHTML = () => {
+    if (!product) return null;
+    const stripTags = (str) => (str ? str.replace(/<[^>]*>/g, '').trim() : '');
+    if (stripTags(product.overview).length > 0) return product.overview;
+    if (stripTags(product.description).length > 0) return product.description;
+    return null;
   };
-  const overviewParagraphs = getOverviewParagraphs();
+  const overviewContent = getOverviewHTML();
 
   return (
     <div className="pd-wrapper">
@@ -407,7 +384,7 @@ const handleReviewClick = () => {
 <div className="mt-12 md:mt-20 border-t border-slate-200 pt-8 md:pt-10">
   {/* TAB HEADER */}
   <div className="flex gap-4 md:gap-10 border-b border-slate-200 mb-6 md:mb-10 overflow-x-auto custom-scrollbar">
-    {["overview", "specs", "reviews"].map((t) => (
+    {["overview", "specs", "reviews", "about"].map((t) => (
       <button
         key={t}
         onClick={() => setTab(t)}
@@ -418,7 +395,7 @@ const handleReviewClick = () => {
               : "text-slate-400 border-transparent hover:text-slate-600"
           }`}
       >
-        {t === "specs" ? "Specifications" : t}
+        {t === "specs" ? "Specifications" : t === "about" ? "About" : t}
       </button>
     ))}
   </div>
@@ -428,21 +405,18 @@ const handleReviewClick = () => {
     {/* OVERVIEW */}
     {tab === "overview" && (
       <div className="overview-content animate-fadeIn">
-        {overviewParagraphs === null ? (
-          <p style={{ color: '#94a3b8', fontStyle: 'italic' }}>No overview available for this product.</p>
+        {overviewContent ? (
+          <div dangerouslySetInnerHTML={{ __html: overviewContent }} />
         ) : (
-          overviewParagraphs.map((para, i) => (
-            <p key={i} style={{
-              fontSize: '15.5px',
-              lineHeight: '1.9',
-              color: '#475569',
-              fontWeight: '400',
-              marginBottom: i < overviewParagraphs.length - 1 ? '20px' : '0',
-            }}>
-              {para}
-            </p>
-          ))
+          <p style={{ color: '#94a3b8', fontStyle: 'italic' }}>No overview available for this product.</p>
         )}
+      </div>
+    )}
+
+    {/* ABOUT */}
+    {tab === "about" && product.about && (
+      <div className="about-content animate-fadeIn">
+        <div dangerouslySetInnerHTML={{ __html: product.about }} />
       </div>
     )}
 
