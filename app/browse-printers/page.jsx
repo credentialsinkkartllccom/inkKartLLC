@@ -12,13 +12,13 @@ const BrowsePrinters = () => {
     const printers = [
         {
             id: 1,
-            name: 'HP LaserJet Pro MFP 3301fdw',
+            name: 'Brother MFC-L2710DW All-in-One',
             category: 'Laser',
-            price: 539,
-            brand: 'HP',
+            price: 229,
+            brand: 'Brother',
             image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600',
             rating: 4.8,
-            feature: 'Enterprise Security'
+            feature: 'High Volume Output'
         },
         {
             id: 2,
@@ -118,7 +118,7 @@ const BrowsePrinters = () => {
                                     <div className="mb-10">
                                         <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-4">Manufacturer</label>
                                         <div className="space-y-3">
-                                            {['All', 'HP', 'Canon', 'Epson', 'Brother'].map(brand => (
+                                            {['All', 'Canon', 'Epson', 'Brother'].map(brand => (
                                                 <label key={brand} className="flex items-center gap-3 group cursor-pointer">
                                                     <div 
                                                         onClick={() => setSelectedBrand(brand)}

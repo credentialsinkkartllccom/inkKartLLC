@@ -33,8 +33,13 @@ export async function GET(req) {
     }
 
     if (brand && brand !== 'all') {
+      if (/^hp$/i.test(brand)) {
+        return successResponse({ products: [], page: 1, pages: 0, total: 0 });
+      }
       const escapedBrand = brand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       query.brand = { $regex: escapedBrand, $options: 'i' };
+    } else {
+      query.brand = { $not: /^hp$/i };
     }
 
     if (search) {

@@ -32,7 +32,12 @@ export async function GET(req, { params }) {
       }
     }
 
-    if (product) return successResponse(product);
+    if (product) {
+      if (product.brand && /^hp$/i.test(product.brand)) {
+        return errorResponse('Product not found', 404);
+      }
+      return successResponse(product);
+    }
     return errorResponse('Product not found', 404);
   } catch (error) {
     return errorResponse(error.message, 500);

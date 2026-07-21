@@ -69,7 +69,7 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#024AD8]/5 to-transparent rounded-bl-full" />
               
               <div className="absolute top-10 right-10 flex items-center gap-3">
-                 <div className="w-10 h-10 bg-[#0F172A] rounded-full flex items-center justify-center text-white font-black italic text-[10px]">HP</div>
+                 <div className="w-10 h-10 bg-[#0F172A] rounded-full flex items-center justify-center text-white font-black italic text-[9px]">Canon</div>
                  <div className="flex flex-col">
                    <span className="text-[10px] font-bold text-[#0F172A] tracking-wider uppercase">Authorized</span>
                    <span className="text-[9px] font-medium text-slate-400 uppercase tracking-widest">Premium Partner</span>
@@ -79,7 +79,7 @@ export default function Home() {
               <div className="relative mt-12 transition-transform duration-700 group-hover:scale-105">
                 <img 
                   src="/assets/hero.jpeg" 
-                  alt="Premium HP Printer" 
+                  alt="Premium Canon Printer" 
                   className="w-full h-auto object-contain drop-shadow-2xl" 
                 />
               </div>

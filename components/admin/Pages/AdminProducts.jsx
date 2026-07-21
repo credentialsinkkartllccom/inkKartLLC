@@ -734,7 +734,7 @@ const AdminProducts = () => {
                                         <ReactQuill
                                             theme="snow"
                                             value={formData.description}
-                                            onChange={(val) => handleQuillChange('overview', val)}
+                                            onChange={(val) => handleQuillChange('description', val)}
                                             modules={quillModules}
                                         />
                                     </div>

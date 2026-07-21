@@ -4,7 +4,7 @@ import { Search as FiSearch, Star as FiStar, X as FiX } from 'lucide-react';
 
 const ProductFilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
     
-    const brands = ['Brother', 'Canon', 'Epson', 'HP'];
+    const brands = ['Brother', 'Canon', 'Epson'];
     const categories = ['ELEX Shipping Calculator', 'Uncategorized'];
     const printerTypes = ['Inkjet Printers', 'Laser Printers', 'Laser Printers (B/W)'];
     const useCases = ['Home & Office', 'Home Printers', 'Office', 'Mobile', 'Photo'];

@@ -137,10 +137,6 @@ const Disclaimer = () => {
 
                             <div className="feature-grid">
                                 <div className="feature-item">
-                                    <h4>🖨️ HP</h4>
-                                    <p>Hewlett-Packard</p>
-                                </div>
-                                <div className="feature-item">
                                     <h4>🖨️ Canon</h4>
                                     <p>Canon Inc.</p>
                                 </div>

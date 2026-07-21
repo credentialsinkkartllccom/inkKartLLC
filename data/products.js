@@ -1,8 +1,8 @@
 const products = [
   {
     id: 1,
-    name: "HP LaserJet Pro M404",
-    price: 28999,
+    name: "Brother HL-L2350DW",
+    price: 13999,
     image: "https://i.imgur.com/2nCt3Sbl.jpg"
   },
   {

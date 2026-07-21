@@ -373,7 +373,7 @@ const handleReviewClick = () => {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#024AD8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
               <div>
                 <h5 className="text-[11px] font-bold text-slate-800">Authentic</h5>
-                <p className="text-[9px] text-slate-400 mt-0.5">HP authorized</p>
+                <p className="text-[9px] text-slate-400 mt-0.5">100% authentic</p>
               </div>
             </div>
           </div>
@@ -425,10 +425,80 @@ const handleReviewClick = () => {
       <div className="animate-fadeIn">
         {product.technicalSpecification ? (
           <div className="overflow-x-auto custom-scrollbar">
-            <div 
-              dangerouslySetInnerHTML={{ __html: product.technicalSpecification }} 
-              className="html-content text-slate-700 min-w-max md:min-w-0"
-            />
+            {(() => {
+              let parsed = null;
+              let isParsed = false;
+              try {
+                if (typeof product.technicalSpecification === 'string') {
+                  // Try to clean HTML tags and decode basic entities if it was pasted into a rich text editor
+                  let cleanText = product.technicalSpecification
+                    .replace(/&quot;/g, '"')
+                    .replace(/&nbsp;/g, ' ')
+                    .replace(/&amp;/g, '&')
+                    .replace(/&#39;/g, "'")
+                    .replace(/&lt;/g, '<')
+                    .replace(/&gt;/g, '>');
+                  // Extract what looks like a JSON array or object
+                  const match = cleanText.match(/(\[.*\]|\{.*\})/s);
+                  if (match) {
+                     cleanText = match[0];
+                  }
+                  // Strip any remaining HTML tags just in case
+                  cleanText = cleanText.replace(/(<([^>]+)>)/gi, "").trim();
+                  
+                  try {
+                    parsed = JSON.parse(cleanText);
+                    isParsed = true;
+                  } catch (e1) {
+                    try {
+                      parsed = JSON.parse(product.technicalSpecification);
+                      isParsed = true;
+                    } catch (e2) {}
+                  }
+                } else if (typeof product.technicalSpecification === 'object') {
+                  parsed = product.technicalSpecification;
+                  isParsed = true;
+                }
+              } catch (e) {}
+
+              if (isParsed && Array.isArray(parsed)) {
+                  return (
+                    <table className="w-full text-left border-collapse">
+                      <tbody>
+                        {parsed.map((item, idx) => {
+                           const key = item.name || item.key || item.label || (Object.keys(item).length > 0 ? Object.keys(item)[0] : '');
+                           const value = item.value !== undefined ? item.value : (Object.keys(item).length > 0 ? Object.values(item)[0] : '');
+                           return (
+                             <tr key={idx} className="border-b border-slate-100 last:border-0">
+                               <td className="py-4 pr-4 font-bold text-slate-900 uppercase text-[10px] tracking-widest w-1/3">{key}</td>
+                               <td className="py-4 text-slate-500 text-sm">{value}</td>
+                             </tr>
+                           );
+                        })}
+                      </tbody>
+                    </table>
+                  );
+                } else if (typeof parsed === 'object' && parsed !== null) {
+                   return (
+                    <table className="w-full text-left border-collapse">
+                      <tbody>
+                        {Object.entries(parsed).map(([k, v], idx) => (
+                          <tr key={idx} className="border-b border-slate-100 last:border-0">
+                            <td className="py-4 pr-4 font-bold text-slate-900 uppercase text-[10px] tracking-widest w-1/3">{k}</td>
+                            <td className="py-4 text-slate-500 text-sm">{String(v)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  );                 
+                }
+              return (
+                <div 
+                  dangerouslySetInnerHTML={{ __html: product.technicalSpecification }} 
+                  className="html-content text-slate-700 min-w-max md:min-w-0"
+                />
+              );
+            })()}
           </div>
         ) : (
           <div className="overflow-x-auto custom-scrollbar">

@@ -14,6 +14,7 @@ export async function GET(req) {
 
     const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const suggestions = await Product.find({
+      brand: { $not: /^hp$/i },
       $or: [
         { title: { $regex: `^${escapedQuery}`, $options: 'i' } },
         { brand: { $regex: `^${escapedQuery}`, $options: 'i' } },
