@@ -255,7 +255,6 @@ const DoNotSell = () => {
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 };
